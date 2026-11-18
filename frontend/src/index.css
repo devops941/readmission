@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F0EDE8;
+    color: #0B0B10;
+    font-family: 'Albert Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+}
+
+/* Dossier Lime signature elements */
+.marker-highlight {
+  background: linear-gradient(transparent 50%, #D4F73C 50%);
+  padding: 0 3px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.marker-highlight-amber {
+  background: linear-gradient(transparent 50%, #FDE68A 50%);
+  padding: 0 3px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.marker-highlight-coral {
+  background: linear-gradient(transparent 50%, #FECDD3 50%);
+  padding: 0 3px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.marker-highlight-emerald {
+  background: linear-gradient(transparent 50%, #A7F3D0 50%);
+  padding: 0 3px;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+/* Dotted printed form input */
+.printed-field {
+  background: transparent;
+  border: none;
+  border-bottom: 2px dotted #4B4B57;
+  border-radius: 0;
+  padding: 3px 6px;
+  font-family: inherit;
+  font-size: inherit;
+  color: #0B0B10;
+  transition: all 0.15s ease;
+}
+.printed-field:focus {
+  outline: none;
+  border-bottom: 2px solid #0B0B10;
+  background-color: #F4FCE3;
+}
+
+/* Folded corner button */
+.fold-button {
+  position: relative;
+  background-color: #0B0B10;
+  color: #FFFFFF;
+  padding: 8px 18px;
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fold-button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.fold-button:hover {
+  background-color: #D4F73C;
+  color: #0B0B10;
+  transform: translateY(-1px);
+}
+
+.fold-button:hover::after {
+  background-color: #BCE814;
+}
+
+.fold-button-outline {
+  position: relative;
+  background-color: #FFFFFF;
+  color: #0B0B10;
+  border: 1.5px solid #0B0B10;
+  padding: 7px 16px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 2px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fold-button-outline:hover {
+  background-color: #F4FCE3;
+  border-color: #0B0B10;
+}
+
+/* Suppressed cell hatched background */
+.hatched-cell {
+  background: repeating-linear-gradient(
+    45deg,
+    #F8F7F5,
+    #F8F7F5 6px,
+    #E3E1E0 6px,
+    #E3E1E0 8px
+  );
+  color: #8A8A96;
+}
+
+/* Custom dossier scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0EDE8;
+}
+::-webkit-scrollbar-thumb {
+  background: #C4C2BE;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8A8A96;
+}
